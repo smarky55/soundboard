@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<html>
+<head>
+    <title>Soundboard</title>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Sam Kingdon"/>
+
+    <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://avatars1.githubusercontent.com/u/5220556?s=400&u=ffb2f564fa0721c077850161ddb8f56dd8108d54&v=4', true);
+    xhr.responseType='blob';
+
+    xhr.onload = function(e) {
+        if (this.status == 200){
+            console.log('loaded');
+            var blob = new Blob([this.response], {type: 'image/jpg'});
+        } else {
+            console.log(this.status);
+        }
+    }
+    xhr.send();
+    </script>
+    <script src="static/js/arx.js"></script>
+</head>
+
+<body>
+<h1>Test</h1>
+<image>
+</body>
+<html>
